@@ -93,6 +93,7 @@ class Logger
     /** Add objects to ignore */
     void addIgnore(const ObjectMatch &ignore_) { ignore.add(ignore_); }
 
+    virtual void reset() { }
     virtual ~Logger() { }
 };
 
@@ -109,6 +110,7 @@ class OstreamLogger : public Logger
 
     void logMessage(Tick when, const std::string &name,
             const std::string &flag, const std::string &message) override;
+    void reset() override;
 
     std::ostream &getOstream() override { return stream; }
 };
