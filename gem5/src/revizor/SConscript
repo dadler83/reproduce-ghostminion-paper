@@ -1,0 +1,12 @@
+Import('*')
+
+SimObject('RevizorIPC.py')
+SimObject('InspectableCache.py')
+
+Source('revizor_ipc.cc')
+Source('inspectable_cache.cc')
+
+
+DebugFlag('RevizorExec')
+DebugFlag('RevizorCommands')
+DebugFlag('RevizorResults')
